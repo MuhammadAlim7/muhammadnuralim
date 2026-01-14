@@ -20,17 +20,10 @@ export default function About() {
                      delay={0.25 + i * 0.05}
                      className="h-full w-full"
                   >
-                     <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        transition={{
-                           type: "spring",
-                           mass: 0.1,
-                           stiffness: 150,
-                           damping: 12,
-                        }}
-                        className="bg-background border-glassy h-full w-full rounded-lg border p-6 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] backdrop-blur-sm"
-                     >
-                        <div className="flex gap-6 lg:flex-col">
+                     <motion.div className="group bg-background border-glassy relative h-full w-full overflow-hidden rounded-2xl border p-6 backdrop-blur-sm transition-all hover:scale-[1.02] hover:bg-white/10 active:scale-[0.98]">
+                        <div className="absolute top-0 right-0 -m-4 h-24 w-24 rounded-full bg-purple-500/10 blur-2xl transition-all group-hover:bg-purple-500/20" />
+
+                        <div className="relative z-10 flex gap-6 lg:flex-col">
                            <div>
                               <data.icon
                                  className="fill-foreground h-12 w-12 lg:h-16 lg:w-16"
@@ -48,7 +41,7 @@ export default function About() {
                               </a>
                            </div>
                         </div>
-                        <p className="text-secondary mt-6 text-sm font-normal lg:mt-4">
+                        <p className="text-secondary relative z-10 mt-6 text-sm font-normal lg:mt-4">
                            {data.description}
                         </p>
                      </motion.div>

@@ -4,6 +4,7 @@ import Bar from "@/app/components/Bar";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
 
 export default function Home() {
    return (
@@ -14,6 +15,7 @@ export default function Home() {
          <Bar />
          <Projects />
          <Contact />
+         <Footer />
       </main>
    );
 }
