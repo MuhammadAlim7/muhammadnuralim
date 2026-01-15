@@ -19,9 +19,9 @@ export default function Hero() {
                   <RevealAnimation>
                      <div className="flex items-center md:justify-center">
                         <RevealAnimation>
-                           <a className="relative z-10 text-5xl leading-[0.8] font-extrabold sm:text-6xl">
+                           <span className="relative z-10 text-5xl leading-[0.8] font-extrabold sm:text-6xl">
                               Hi! I'm
-                           </a>
+                           </span>
                         </RevealAnimation>
 
                         <RevealAnimation direction="right" delay={0.5}>
@@ -56,7 +56,7 @@ function IconButton({ className, ...props }: React.ComponentProps<"button">) {
    return (
       <button
          className={cn(
-            "border-glassy text-foreground rounded-md border p-2 text-sm font-semibold",
+            "border-glassy text-foreground rounded-xl border p-2 text-sm font-semibold",
             className,
          )}
          {...props}

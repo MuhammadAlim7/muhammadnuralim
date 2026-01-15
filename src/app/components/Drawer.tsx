@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { LogOut, Github, X, LucideProps } from "lucide-react";
-import { dataTypes, formatDate } from "@/lib/project";
+import { Project, formatDate } from "@/lib/project";
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -11,8 +11,8 @@ import { useMediaQuery } from "@custom-react-hooks/use-media-query";
 import { Drawer as Vaul } from "vaul";
 
 interface DrawerProps {
-   selectedItem: dataTypes | null;
-   setSelectedItem: React.Dispatch<React.SetStateAction<dataTypes | null>>;
+   selectedItem: Project | null;
+   setSelectedItem: React.Dispatch<React.SetStateAction<Project | null>>;
 }
 
 export const Drawer = ({
@@ -58,7 +58,7 @@ export const Drawer = ({
                         damping: 14,
                         stiffness: 100,
                      }}
-                     className="bg-background relative mx-4 h-5/6 w-full max-w-6xl overflow-hidden rounded-xl shadow-xl"
+                     className="bg-background relative mx-4 h-5/6 w-full max-w-6xl overflow-hidden rounded-2xl shadow-xl"
                   >
                      {/* Close Button */}
                      <button
@@ -257,7 +257,7 @@ function ActionButton({
          }}
          title={href == "" ? "Coming Soon" : title}
          className={cn(
-            "flex items-center gap-1 rounded-lg px-2 py-2 text-xs font-medium transition-colors",
+            "flex items-center gap-1 rounded-xl px-4 py-2 text-xs font-medium transition-colors",
             href == "" ? "cursor-not-allowed" : "cursor-pointer",
             className,
          )}

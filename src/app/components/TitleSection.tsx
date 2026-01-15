@@ -20,10 +20,14 @@ export default function TitleSection({
          )}
       >
          <RevealAnimation>
-            <h2 className="text-secondary text-lg font-medium">{title}</h2>
+            <h2 className="text-secondary text-base font-semibold tracking-widest uppercase">
+               {title}
+            </h2>
          </RevealAnimation>
          <RevealAnimation>
-            <p className="text-3xl font-bold tracking-tight">{description}</p>
+            <p className="text-3xl font-bold tracking-tight sm:text-4xl">
+               {description}
+            </p>
          </RevealAnimation>
       </div>
    );

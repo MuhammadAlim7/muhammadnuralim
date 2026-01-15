@@ -1,4 +1,19 @@
-export const data = [
+export type ProjectCategory = "Web" | "UI/UX" | "Data/Finance";
+
+export interface Project {
+   title: string;
+   date: string;
+   images: string;
+   languages: {
+      name: string;
+   }[];
+   description: string;
+   sourcecode: string;
+   livedemo: string;
+   category: ProjectCategory;
+}
+
+export const data: Project[] = [
    {
       title: "App E-Commerce",
       date: "2023-01-15",
@@ -6,8 +21,6 @@ export const data = [
       languages: [
          { name: "CodeIgniter" },
          { name: "PHP" },
-         { name: "HTML" },
-         { name: "CSS" },
          { name: "Javascript" },
          { name: "Bootstrap" },
       ],
@@ -15,6 +28,7 @@ export const data = [
          "ILorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, similique. Ipsam dignissimos aut incidunt mollitia sed, rerum perferendis nobis assumenda.",
       sourcecode: "",
       livedemo: "",
+      category: "Web",
    },
    {
       title: "Student Search Web",
@@ -24,8 +38,6 @@ export const data = [
          { name: "Next.js" },
          { name: "Tailwind CSS" },
          { name: "Cheerio" },
-         { name: "HTML5" },
-         { name: "CSS" },
          { name: "TypeScript" },
          { name: "Framer Motion" },
       ],
@@ -33,6 +45,7 @@ export const data = [
          "Project web scraping dasar yang saya buat menggunakan Next.js, Tailwind CSS, dan Cheerio. Aplikasi ini memungkinkan pengguna untuk mencari data mahasiswa ABM langsung dari sistem informasi kampus melalui form pencarian yang dilengkapi validasi input. Proyek ini juga menjadi latihan implementasi scraping server-side dengan Next.js API routes, serta menampilkan hasil pencarian secara real-time dengan antarmuka yang responsif dan sederhana.",
       sourcecode: "https://github.com/MuhammadAlim7/CariMahasiswaABM",
       livedemo: "https://cari-mahasiswa-abm.vercel.app/",
+      category: "Web",
    },
    {
       title: " Food Order Mobile App UI/UX",
@@ -43,6 +56,7 @@ export const data = [
       sourcecode: "https://github.com/MuhammadAlim7/Aplikasi-Pembayaran-SPP",
       livedemo:
          "https://www.figma.com/design/pC9bQMSrnAXzGX0S1KoEYl/Final-Project---Lumoshive-Academy?node-id=45-262&p=f&t=1vvmRaBQBOnC2I16-0",
+      category: "UI/UX",
    },
    {
       title: "Spotify Mobile App Clone UI/UX",
@@ -53,6 +67,7 @@ export const data = [
       sourcecode:
          "https://www.figma.com/design/MsP5vkMDHZdMZFFJRsiHan/Muhammad-Nur-Alim---Lumoshive-UI-UX?node-id=47-235&t=GgXE6z4UxJa0VIWd-1",
       livedemo: "",
+      category: "UI/UX",
    },
    {
       title: "Kalkulator BMI",
@@ -65,6 +80,7 @@ export const data = [
          "https://github.com/revou-fundamental-course/5-aug-24-MuhammadAlim7",
       livedemo:
          "https://revou-fundamental-course.github.io/5-aug-24-MuhammadAlim7/",
+      category: "Web",
    },
    {
       title: "Student Payment Portal Application",
@@ -73,8 +89,6 @@ export const data = [
       languages: [
          { name: "PHP" },
          { name: "MySQL" },
-         { name: "HTML" },
-         { name: "CSS" },
          { name: "JavaScript" },
          { name: "Bootstrap" },
       ],
@@ -82,6 +96,7 @@ export const data = [
          "Ini adalah proyek Ujian Kompetensi Keahlian (UKK) saya saat SMK dalam jurusan Rekayasa Perangkat Lunak. Aplikasi ini dibuat menggunakan PHP Native (tanpa framework) dan bertujuan untuk membantu pengelolaan serta pencatatan pembayaran SPP (Sumbangan Pembinaan Pendidikan) di lingkungan sekolah.",
       sourcecode: "",
       livedemo: "",
+      category: "Web",
    },
    {
       title: "Cars Catalog Mobile App UI/UX ",
@@ -92,6 +107,7 @@ export const data = [
       sourcecode:
          "https://www.figma.com/design/sdlqCYQDGkOSoAThA9hDlZ/Design_mobile_app_temamobil_dan_toko.Muhammad_Nur_Alim_XI_RPL_2-24.nama_app-kuruma-?node-id=0-1&t=eCD9F7j3t9ppLMn8-0",
       livedemo: "",
+      category: "UI/UX",
    },
    {
       title: "Online Food Ordering Mobile App UI/UX",
@@ -102,6 +118,7 @@ export const data = [
       sourcecode:
          "https://www.figma.com/design/HjmZsop5CBgLWcCTclQC5i/MUHAMMAD-NUR-ALIM-XIRPL2-24?node-id=0-1",
       livedemo: "",
+      category: "UI/UX",
    },
    {
       title: "myFirst ReactApp ",
@@ -111,14 +128,13 @@ export const data = [
          { name: "React.js" },
          { name: "Tailwind CSS" },
          { name: "Framer Motion" },
-         { name: "HTML" },
-         { name: "CSS" },
          { name: "JavaScript" },
       ],
       description:
          "Situs portofolio pribadi saya yang dibangun menggunakan React.js, TailwindCSS, dan Framer Motion. Website ini dirancang sebagai media personal branding untuk menampilkan profil, keahlian, serta proyek-proyek saya di bidang Frontend Development dan UI/UX Design. Tampilan dibuat modern, responsif, dan interaktif untuk memberikan pengalaman pengguna yang optimal.",
       sourcecode: "https://github.com/MuhammadAlim7/muhammadalim7.github.io",
       livedemo: "https://muhammadalim7.github.io/",
+      category: "Web",
    },
    {
       title: "MovieApp: Netplik",
@@ -127,28 +143,15 @@ export const data = [
       languages: [
          { name: "Next.js" },
          { name: "Tailwind CSS" },
-         { name: "HTML5" },
-         { name: "CSS" },
          { name: "TypeScript" },
          { name: "Framer Motion" },
       ],
       description: "",
       sourcecode: "",
       livedemo: "",
+      category: "Web",
    },
 ];
-
-export interface dataTypes {
-   title: string;
-   date: string;
-   images: string;
-   languages: {
-      name: string;
-   }[];
-   description: string;
-   sourcecode: string;
-   livedemo: string;
-}
 [];
 
 export const formatDate = (dateString: string): string => {
