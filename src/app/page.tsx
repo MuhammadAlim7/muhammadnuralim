@@ -1,14 +1,14 @@
-import Hero from "@/app/pages/Hero";
 import Background from "@/app/components/Background";
+import Projects from "@/app/sections/Projects";
+import Footer from "@/app/components/Footer";
+import Contact from "@/app/sections/Contact";
+import About from "@/app/sections/About";
 import Bar from "@/app/components/Bar";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
-import Contact from "./pages/Contact";
-import Footer from "./components/Footer";
+import Hero from "@/app/sections/Hero";
 
 export default function Home() {
    return (
-      <main>
+      <main data-vaul-drawer-wrapper>
          <Background />
          <Hero />
          <About />

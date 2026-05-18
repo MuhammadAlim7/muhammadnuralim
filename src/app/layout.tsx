@@ -1,8 +1,11 @@
-import type { Metadata } from "next";
-import { Figtree } from "next/font/google";
-import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import { Figtree } from "next/font/google";
+import type { Metadata } from "next";
+
+import { siteConfig } from "@/config/site";
+
 import { SectionRefProvider } from "./hooks/SectionRefContext";
+import "./globals.css";
 
 const figtree = Figtree({
    variable: "--font-figtree",
@@ -10,29 +13,18 @@ const figtree = Figtree({
 });
 
 export const metadata: Metadata = {
-   title: "Muhammad Nur Alim",
-   description:
-      "Portofolio Muhammad Nur Alim – Web Developer, Programmer, dan Tech Enthusiast.",
-   keywords: [
-      "Muhammad Nur Alim",
-      "Web Developer",
-      "Portfolio",
-      "Next.js",
-      "React",
-      "Frontend",
-      "Full Stack",
-   ],
+   title: siteConfig.name,
+   description: siteConfig.description,
+   keywords: siteConfig.keywords,
    other: {
-      "google-site-verification": "11ND7Lq7wqVz2HhllgMw5LZWB5FUxTDMtmrbx0LetDQ",
+      "google-site-verification": siteConfig.googleSiteVerification,
    },
    robots: {
       index: true,
       follow: true,
    },
-   authors: [
-      { name: "Muhammad Nur Alim", url: "https://muhammadalim7.github.io/" },
-   ],
-   creator: "Muhammad Nur Alim",
+   authors: [{ name: siteConfig.name, url: siteConfig.url }],
+   creator: siteConfig.name,
    icons: {
       icon: "/logo.svg",
    },

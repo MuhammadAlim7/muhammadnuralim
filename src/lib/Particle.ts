@@ -1,5 +1,6 @@
-import { useMediaQuery } from "@custom-react-hooks/use-media-query";
 import { ISourceOptions } from "@tsparticles/engine";
+
+import { useMediaQuery } from "@/app/hooks/useMediaQuery";
 
 function getRandomColor(count: number) {
    const targetSaturation = 90;
@@ -43,13 +44,13 @@ function hslToHex(h: number, s: number, l: number) {
    return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
 }
 
-export function Particle() {
+export function useParticles() {
    const isDesktop = useMediaQuery("(min-width: 768px)");
    const configuration: ISourceOptions = {
       autoPlay: true,
       background: {
          color: {
-            value: "#transparent",
+            value: "transparent",
          },
          image: "",
          position: "",

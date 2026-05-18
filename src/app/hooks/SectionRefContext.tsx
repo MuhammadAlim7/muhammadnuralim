@@ -2,10 +2,10 @@
 import { createContext, RefObject, useContext, useRef } from "react";
 
 type SectionRefs = {
-   section1Ref: RefObject<HTMLElement> | RefObject<null>;
-   section2Ref: RefObject<HTMLElement> | RefObject<null>;
-   section3Ref: RefObject<HTMLElement> | RefObject<null>;
-   section4Ref: RefObject<HTMLElement> | RefObject<null>;
+   headRef: RefObject<HTMLElement> | RefObject<null>;
+   aboutRef: RefObject<HTMLElement> | RefObject<null>;
+   projectRef: RefObject<HTMLElement> | RefObject<null>;
+   contactRef: RefObject<HTMLElement> | RefObject<null>;
 };
 
 // Kalau nilai default-nya null
@@ -16,18 +16,18 @@ export const SectionRefProvider = ({
 }: {
    children: React.ReactNode;
 }) => {
-   const section1Ref = useRef(null);
-   const section2Ref = useRef(null);
-   const section3Ref = useRef(null);
-   const section4Ref = useRef(null);
+   const headRef = useRef(null);
+   const aboutRef = useRef(null);
+   const projectRef = useRef(null);
+   const contactRef = useRef(null);
 
    return (
       <SectionRefContext.Provider
          value={{
-            section1Ref,
-            section2Ref,
-            section3Ref,
-            section4Ref,
+            headRef,
+            aboutRef,
+            projectRef,
+            contactRef,
          }}
       >
          {children}

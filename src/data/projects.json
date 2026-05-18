@@ -1,0 +1,142 @@
+[
+   {
+      "id": "001",
+      "title": "App E-Commerce",
+      "date": "2023-01-15",
+      "images": "ecommerce.png",
+      "languages": [
+         { "name": "CodeIgniter" },
+         { "name": "PHP" },
+         { "name": "Javascript" },
+         { "name": "Bootstrap" }
+      ],
+      "description": "Aplikasi e-commerce berbasis web yang dibangun menggunakan framework CodeIgniter. Proyek ini mencakup fitur manajemen produk, keranjang belanja, dan sistem transaksi sederhana, dirancang untuk memberikan platform belanja online yang stabil dan mudah dikelola.",
+      "sourcecode": "",
+      "livedemo": "",
+      "category": "Web"
+   },
+   {
+      "id": "002",
+      "title": "Student Search Web",
+      "date": "2024-08-20",
+      "images": "studentsearch.png",
+      "languages": [
+         { "name": "Next.js" },
+         { "name": "Tailwind CSS" },
+         { "name": "Cheerio" },
+         { "name": "TypeScript" },
+         { "name": "Framer Motion" }
+      ],
+      "description": "Project web scraping dasar yang saya buat menggunakan Next.js, Tailwind CSS, dan Cheerio. Aplikasi ini memungkinkan pengguna untuk mencari data mahasiswa ABM langsung dari sistem informasi kampus melalui form pencarian yang dilengkapi validasi input. Proyek ini juga menjadi latihan implementasi scraping server-side dengan Next.js API routes, serta menampilkan hasil pencarian secara real-time dengan antarmuka yang responsif dan sederhana.",
+      "sourcecode": "https://github.com/MuhammadAlim7/CariMahasiswaABM",
+      "livedemo": "https://cari-mahasiswa-abm.vercel.app/",
+      "category": "Web"
+   },
+   {
+      "id": "003",
+      "title": " Food Order Mobile App UI/UX",
+      "date": "2024-03-10",
+      "images": "foodieid.png",
+      "languages": [{ "name": "Figma" }, { "name": "UI/UX Design" }],
+      "description": "Desain antarmuka aplikasi pemesanan makanan mobile yang berfokus pada kemudahan penggunaan dan estetika modern. Proyek ini mencakup perancangan user flow, wireframing, hingga high-fidelity prototype menggunakan Figma untuk memberikan pengalaman pemesanan yang mulus bagi pengguna.",
+      "sourcecode": "https://www.figma.com/design/pC9bQMSrnAXzGX0S1KoEYl/Final-Project---Lumoshive-Academy?node-id=45-262&p=f&t=1vvmRaBQBOnC2I16-0",
+      "livedemo": "https://www.figma.com/proto/pC9bQMSrnAXzGX0S1KoEYl/Final-Project---Lumoshive-Academy?node-id=45-479&t=2XtPdwOjeAOWmWhX-1&scaling=scale-down&content-scaling=fixed&page-id=45%3A262&starting-point-node-id=45%3A359",
+      "category": "UI/UX"
+   },
+   {
+      "id": "004",
+      "title": "Spotify Mobile App Clone UI/UX",
+      "date": "2024-03-25",
+      "images": "spotifyclone.png",
+      "languages": [{ "name": "Figma" }, { "name": "UI/UX Design" }],
+      "description": "Proyek desain UI/UX yang mereplikasi antarmuka aplikasi Spotify Mobile dengan penyesuaian desain yang lebih segar. Fokus pada penyusunan tata letak pemutar musik, navigasi playlist, dan eksplorasi konten untuk mengasah kemampuan dalam menciptakan desain yang konsisten dan user-centric.",
+      "sourcecode": "https://www.figma.com/design/MsP5vkMDHZdMZFFJRsiHan/Muhammad-Nur-Alim---Lumoshive-UI-UX?node-id=47-235&t=GgXE6z4UxJa0VIWd-1",
+      "livedemo": "https://www.figma.com/proto/MsP5vkMDHZdMZFFJRsiHan/Muhammad-Nur-Alim---Lumoshive-UI-UX?node-id=84-2079&t=gMkQauhK2Aiu8QGs-1&scaling=scale-down&content-scaling=fixed&page-id=47%3A235&starting-point-node-id=47%3A236",
+      "category": "UI/UX"
+   },
+   {
+      "id": "005",
+      "title": "Kalkulator BMI",
+      "date": "2024-08-05",
+      "images": "bmicalc.png",
+      "languages": [
+         { "name": "HTML" },
+         { "name": "CSS" },
+         { "name": "JavaScript" }
+      ],
+      "description": "Project RevoU Fundamental Course - JavaScript, HTML, dan CSS membangun aplikasi web yang interaktif dan user-friendly. Aplikasi ini memiliki fitur untuk menghitung BMI (Body Mass Index), yang membantu pengguna mengetahui apakah berat badan mereka termasuk kurang, ideal, atau berlebih.",
+      "sourcecode": "https://github.com/revou-fundamental-course/5-aug-24-MuhammadAlim7",
+      "livedemo": "https://revou-fundamental-course.github.io/5-aug-24-MuhammadAlim7/",
+      "category": "Web"
+   },
+   {
+      "id": "006",
+      "title": "Student Payment Portal Application",
+      "date": "2023-03-18",
+      "images": "studentpay.png",
+      "languages": [
+         { "name": "PHP" },
+         { "name": "MySQL" },
+         { "name": "JavaScript" },
+         { "name": "Bootstrap" }
+      ],
+      "description": "Ini adalah proyek Ujian Kompetensi Keahlian (UKK) saya saat SMK dalam jurusan Rekayasa Perangkat Lunak. Aplikasi ini dibuat menggunakan PHP Native (tanpa framework) dan bertujuan untuk membantu pengelolaan serta pencatatan pembayaran SPP (Sumbangan Pembinaan Pendidikan) di lingkungan sekolah.",
+      "sourcecode": "",
+      "livedemo": "",
+      "category": "Web"
+   },
+   {
+      "id": "007",
+      "title": "Cars Catalog Mobile App UI/UX ",
+      "date": "2022-08-12",
+      "images": "carscatalog.png",
+      "languages": [{ "name": "Figma" }, { "name": "UI/UX Design" }],
+      "description": "Konsep desain aplikasi katalog mobil yang memungkinkan pengguna untuk menjelajahi berbagai model kendaraan dengan detail spesifikasi yang lengkap. Dirancang dengan antarmuka yang elegan dan intuitif untuk memudahkan navigasi serta pemilihan mobil impian pengguna.",
+      "sourcecode": "https://www.figma.com/design/sdlqCYQDGkOSoAThA9hDlZ/Design_mobile_app_temamobil_dan_toko.Muhammad_Nur_Alim_XI_RPL_2-24.nama_app-kuruma-?node-id=0-1&t=eCD9F7j3t9ppLMn8-0",
+      "livedemo": "https://www.figma.com/proto/sdlqCYQDGkOSoAThA9hDlZ/Design_mobile_app_temamobil_dan_toko.Muhammad_Nur_Alim_XI_RPL_2-24.nama_app-kuruma-?node-id=2-2&t=fSUCoZnx01cjkDcK-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A2",
+      "category": "UI/UX"
+   },
+   {
+      "id": "008",
+      "title": "Online Food Ordering Mobile App UI/UX",
+      "date": "2022-05-22",
+      "images": "onlinefood.png",
+      "languages": [{ "name": "Figma" }, { "name": "UI/UX Design" }],
+      "description": "Perancangan UI/UX untuk aplikasi pemesanan makanan online yang menekankan pada efisiensi proses checkout dan visual menu yang menggugah selera. Menggunakan prinsip desain modern untuk memastikan interaksi yang responsif dan menyenangkan di perangkat mobile.",
+      "sourcecode": "https://www.figma.com/design/HjmZsop5CBgLWcCTclQC5i/MUHAMMAD-NUR-ALIM-XIRPL2-24?node-id=0-1",
+      "livedemo": "https://www.figma.com/proto/HjmZsop5CBgLWcCTclQC5i/MUHAMMAD-NUR-ALIM-XIRPL2-24?node-id=2-11&t=ZKbhfVteyeWPnJKA-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A11",
+      "category": "UI/UX"
+   },
+   {
+      "id": "009",
+      "title": "myFirst ReactApp ",
+      "date": "2024-07-14",
+      "images": "reactviteportfolio.png",
+      "languages": [
+         { "name": "React.js" },
+         { "name": "Tailwind CSS" },
+         { "name": "Framer Motion" },
+         { "name": "JavaScript" }
+      ],
+      "description": "Situs portofolio pribadi saya yang dibangun menggunakan React.js, TailwindCSS, dan Framer Motion. Website ini dirancang sebagai media personal branding untuk menampilkan profil, keahlian, serta proyek-proyek saya di bidang Frontend Development dan UI/UX Design. Tampilan dibuat modern, responsif, dan interaktif untuk memberikan pengalaman pengguna yang optimal.",
+      "sourcecode": "https://github.com/MuhammadAlim7/muhammadalim7.github.io",
+      "livedemo": "https://muhammadalim7.github.io/",
+      "category": "Web"
+   },
+   {
+      "id": "010",
+      "title": "MovieApp: Netplik",
+      "date": "2024-09-08",
+      "images": "netplik.png",
+      "languages": [
+         { "name": "Next.js" },
+         { "name": "Tailwind CSS" },
+         { "name": "TypeScript" },
+         { "name": "Framer Motion" }
+      ],
+      "description": "Aplikasi penjelajah film modern yang dibangun menggunakan Next.js dan Tailwind CSS. Netplik menghadirkan antarmuka yang dinamis dengan animasi halus dari Framer Motion, memungkinkan pengguna untuk mencari dan melihat detail film populer dengan performa yang cepat dan responsif.",
+      "sourcecode": "",
+      "livedemo": "",
+      "category": "Web"
+   }
+]

@@ -1,17 +1,17 @@
 "use client";
-
-import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import { useTheme } from "next-themes";
-import { Particle } from "@/lib/Particle";
+import { useEffect, useState } from "react";
+
+// import { useTheme } from "next-themes";
+
+import { useParticles } from "@/lib/particle";
 
 export default function Background() {
    const [init, setInit] = useState(false);
-   const { theme } = useTheme();
-   const configuration = Particle();
+   // const { theme } = useTheme();
+   const configuration = useParticles();
 
-   // Initialize particles engine once (singleton behavior handles this safely)
    useEffect(() => {
       initParticlesEngine(async (engine) => {
          await loadSlim(engine);
@@ -25,11 +25,10 @@ export default function Background() {
    return (
       <Particles
          id="tsparticles"
-         className="fixed inset-0 -z-10 h-screen w-full"
+         className="fixed inset-0 h-screen w-full"
          options={{
             ...configuration,
-            // Ensure theme is applied if needed, though usually handled via options or css
-            themes: theme === "dark" ? [] : [], // basic placeholder if config has themes
+            // themes: theme === "dark" ? [] : [],
          }}
       />
    );

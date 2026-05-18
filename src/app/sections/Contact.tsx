@@ -1,46 +1,49 @@
 "use client";
+import { ArrowUpRight, Check, Copy } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 import React from "react";
-import Margin from "../components/Margin";
-import TitleSection from "../components/TitleSection";
-import RevealAnimation from "../components/RevealAnimation";
+
 import {
    Facebook,
    Github,
    Instagram,
    Linkedin,
-   Copy,
-   Check,
-   ArrowUpRight,
-} from "lucide-react";
-import Link from "next/link";
-import { useSectionRefs } from "../hooks/SectionRefContext";
-import { AnimatePresence, motion } from "motion/react";
+} from "@/app/components/icons/CustomIcons";
+import { useSectionRefs } from "@/app/hooks/SectionRefContext";
+import TitleSection from "@/app/components/TitleSection";
+import RevealAnimation from "@/app/components/Reveal";
+import Margin from "@/app/components/Margin";
+import { siteConfig } from "@/config/site";
 
 const contact = [
    {
-      name: "Intstagram",
+      name: "Instagram",
       Icon: Instagram,
-      href: "https://ig.me/m/muhammadnuralim7",
+      href: siteConfig.links.instagram,
    },
    {
       name: "Linkedin",
       Icon: Linkedin,
-      href: "https://www.linkedin.com/in/limm7/",
+      href: siteConfig.links.linkedin,
    },
-   { name: "Github", Icon: Github, href: "https://github.com/MuhammadAlim7" },
+   {
+      name: "Github",
+      Icon: Github,
+      href: siteConfig.links.github,
+   },
    {
       name: "IMPHNEN",
       Icon: Facebook,
-      href: "https://www.facebook.com/groups/programmerhandal/",
+      href: siteConfig.links.facebook_imphnen,
    },
 ];
 
 export default function Contact() {
-   const { section4Ref } = useSectionRefs();
+   const { contactRef } = useSectionRefs();
    const [copied, setCopied] = React.useState(false);
 
    const handleCopyEmail = async () => {
-      const email = "muhammadnuralim7@gmail.com";
+      const email = siteConfig.email;
 
       try {
          // Try modern API first
@@ -52,12 +55,10 @@ export default function Contact() {
             throw new Error("Clipboard API unavailable");
          }
       } catch {
-         // Fallback for mobile/older browsers
          try {
             const textArea = document.createElement("textarea");
             textArea.value = email;
 
-            // Ensure proper selection on mobile
             textArea.style.position = "fixed";
             textArea.style.left = "-9999px";
             textArea.style.top = "0";
@@ -81,8 +82,7 @@ export default function Contact() {
 
    return (
       <Margin
-         ref={section4Ref}
-         id="section4"
+         ref={contactRef}
          className="flex min-h-[80vh] flex-col justify-center"
       >
          <TitleSection
@@ -93,12 +93,12 @@ export default function Contact() {
 
          <div className="mx-auto grid w-full max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2">
             {/* Main CTA Card */}
-            <div className="group border-glassy relative col-span-1 overflow-hidden rounded-2xl border bg-white/5 p-8 backdrop-blur-lg transition-all hover:bg-white/10 sm:col-span-2 lg:col-span-2 lg:row-span-2">
+            <RevealAnimation className="group border-glassy relative col-span-1 overflow-hidden rounded-2xl border bg-white/5 p-6 backdrop-blur-lg hover:bg-white/10 sm:col-span-2 lg:col-span-2 lg:row-span-2">
                <div className="flex h-full flex-col justify-between gap-8">
                   <div className="space-y-2">
-                     <h3 className="text-secondary text-lg font-medium">
-                        Let's work together
-                     </h3>
+                     <h2 className="text-secondary text-lg font-medium">
+                        Let&apos;s work together
+                     </h2>
                      <p className="max-w-md text-4xl leading-tight font-bold tracking-tight sm:text-5xl">
                         Have a project in mind?
                      </p>
@@ -107,17 +107,17 @@ export default function Contact() {
                      <div className="absolute -right-4 -bottom-4 h-32 w-32 rounded-full bg-blue-500/20 blur-3xl transition-all group-hover:bg-blue-500/30" />
                      <button
                         onClick={handleCopyEmail}
-                        className="border-glassy relative flex w-full items-center justify-between rounded-xl border bg-white/5 px-5 py-4 transition-all hover:bg-white/10 active:scale-[0.98]"
+                        className="border-glassy relative flex w-full cursor-pointer items-center justify-between rounded-xl border bg-white/5 px-5 py-4 transition-all hover:bg-white/10 active:scale-[0.98]"
                      >
                         <div className="flex flex-col items-start">
                            <span className="text-secondary text-xs tracking-wider uppercase">
                               Mail me at
                            </span>
                            <span className="text-sm font-medium sm:text-base">
-                              muhammadnuralim7@gmail.com
+                              {siteConfig.email}
                            </span>
                         </div>
-                        <div className="text-foreground relative grid place-items-center rounded-lg transition-colors group-hover:text-blue-400 sm:p-1">
+                        <div className="text-foreground relative grid place-items-center rounded-lg group-hover:text-blue-400 sm:p-1">
                            <AnimatePresence mode="wait">
                               {copied ? (
                                  <motion.div
@@ -143,31 +143,28 @@ export default function Contact() {
                      </button>
                   </div>
                </div>
-            </div>
+            </RevealAnimation>
 
             {/* Social Cards */}
             {contact.map((item, index) => (
                <RevealAnimation
+                  as="next/link"
                   key={index}
                   delay={index * 0.1}
-                  className="col-span-1"
+                  href={item.href}
+                  target="_blank"
+                  className="col-span-1 group border-glassy relative flex h-full sm:min-h-40 sm:flex-col justify-between overflow-hidden rounded-2xl border bg-white/5 p-6 backdrop-blur-lg hover:scale-[1.02] hover:bg-white/10 active:scale-[0.98]"
                >
-                  <Link
-                     href={item.href}
-                     target="_blank"
-                     className="group border-glassy relative flex h-full min-h-[160px] flex-col justify-between overflow-hidden rounded-2xl border bg-white/5 p-6 backdrop-blur-lg transition-all hover:scale-[1.02] hover:bg-white/10 active:scale-[0.98]"
-                  >
-                     <div className="absolute top-0 right-0 -m-4 h-24 w-24 rounded-full bg-purple-500/10 blur-2xl transition-all group-hover:bg-purple-500/20" />
+                  <div className="absolute top-0 right-0 -m-4 h-24 w-24 rounded-full bg-purple-500/10 blur-2xl transition-all group-hover:bg-purple-500/20" />
 
-                     <div className="text-secondary group-hover:text-foreground relative z-10 box-border w-fit rounded-full border border-white/10 p-3 transition-colors group-hover:border-white/20 group-hover:bg-white/5">
-                        <item.Icon className="size-6" />
-                     </div>
+                  <div className="text-secondary group-hover:text-foreground border-glassy relative z-10 box-border w-fit rounded-full border p-3 transition-colors group-hover:bg-white/5">
+                     <item.Icon className="size-6" />
+                  </div>
 
-                     <div className="relative z-10 flex items-center justify-between">
-                        <span className="text-lg font-medium">{item.name}</span>
-                        <ArrowUpRight className="text-secondary group-hover:text-foreground size-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                     </div>
-                  </Link>
+                  <div className="relative z-10 flex items-center justify-between">
+                     <h2 className="text-lg font-medium">{item.name}</h2>
+                     <ArrowUpRight className="text-secondary group-hover:text-foreground size-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  </div>
                </RevealAnimation>
             ))}
          </div>

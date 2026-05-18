@@ -1,8 +1,7 @@
-import React from "react";
+import RevealAnimation from "@/app/components/Reveal";
 import { cn } from "@/lib/utils";
-import RevealAnimation from "./RevealAnimation";
 
-interface SectionTittleProps {
+interface SectionTitleProps {
    title: string;
    description: string;
 }
@@ -11,7 +10,7 @@ export default function TitleSection({
    title,
    description,
    className,
-}: SectionTittleProps & React.ComponentProps<"div">) {
+}: SectionTitleProps & React.ComponentProps<"div">) {
    return (
       <div
          className={cn(
@@ -19,15 +18,17 @@ export default function TitleSection({
             className,
          )}
       >
-         <RevealAnimation>
-            <h2 className="text-secondary text-base font-semibold tracking-widest uppercase">
-               {title}
-            </h2>
+         <RevealAnimation
+            as="h1"
+            className="text-secondary text-base font-semibold tracking-widest uppercase"
+         >
+            {title}
          </RevealAnimation>
-         <RevealAnimation>
-            <p className="text-3xl font-bold tracking-tight sm:text-4xl">
-               {description}
-            </p>
+         <RevealAnimation
+            as="span"
+            className="text-3xl font-bold tracking-tight sm:text-4xl"
+         >
+            {description}
          </RevealAnimation>
       </div>
    );
