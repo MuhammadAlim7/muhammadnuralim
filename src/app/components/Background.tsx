@@ -3,9 +3,9 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { useEffect, useState } from "react";
 
-// import { useTheme } from "next-themes";
-
 import { useParticles } from "@/lib/particle";
+
+// import { useTheme } from "next-themes";
 
 export default function Background() {
    const [init, setInit] = useState(false);
