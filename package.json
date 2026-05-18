@@ -1,10 +1,11 @@
 {
-   "name": "new-portfolio",
+   "name": "muhammadnuralim",
    "version": "0.1.0",
    "private": true,
    "scripts": {
       "dev": "next dev",
       "build": "next build --webpack",
+      "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
       "start": "next start",
       "lint": "eslint"
    },
@@ -26,6 +27,7 @@
    },
    "devDependencies": {
       "@eslint/eslintrc": "^3",
+      "@opennextjs/cloudflare": "^1.19.10",
       "@tailwindcss/postcss": "^4",
       "@trivago/prettier-plugin-sort-imports": "^6.0.2",
       "@types/node": "^25",
@@ -36,7 +38,8 @@
       "prettier": "^3.8.3",
       "prettier-plugin-tailwindcss": "^0.8.0",
       "tailwindcss": "^4",
-      "typescript": "^6"
+      "typescript": "^6",
+      "wrangler": "^4.92.0"
    },
    "overrides": {
       "postcss@<8.5.10": ">=8.5.10"
