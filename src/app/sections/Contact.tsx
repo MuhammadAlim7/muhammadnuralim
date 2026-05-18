@@ -1,7 +1,7 @@
 "use client";
 import { ArrowUpRight, Check, Copy } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
-import React from "react";
+import { useState } from "react";
 
 import {
    Facebook,
@@ -40,7 +40,7 @@ const contact = [
 
 export default function Contact() {
    const { contactRef } = useSectionRefs();
-   const [copied, setCopied] = React.useState(false);
+   const [copied, setCopied] = useState(false);
 
    const handleCopyEmail = async () => {
       const email = siteConfig.email;

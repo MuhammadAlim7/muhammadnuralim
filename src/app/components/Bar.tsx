@@ -21,7 +21,6 @@ import React, { useRef, useState, useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
 
 import { useSectionRefs } from "@/app/hooks/SectionRefContext";
-import { useMediaQuery } from "@/app/hooks/useMediaQuery";
 import { useIsMobile } from "@/app/hooks/useIsMobile";
 import { cn } from "@/lib/utils";
 

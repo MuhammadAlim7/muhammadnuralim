@@ -7,8 +7,8 @@ import {
    Variants,
    MotionProps,
 } from "motion/react";
+import { useRef, useMemo } from "react";
 import Image from "next/image";
-import { useRef } from "react";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
@@ -21,28 +21,28 @@ const NEXT_COMPONENTS = {
 } as const;
 
 // Tipe Generic Polymorphic RevealProps yang dinamis & type-safe
-type RevealProps<T extends React.ElementType | keyof typeof NEXT_COMPONENTS = "div"> =
-   Omit<
-      MotionProps & (
-         T extends "next/link"
-            ? React.ComponentPropsWithoutRef<typeof Link>
-            : T extends "next/image"
-            ? React.ComponentPropsWithoutRef<typeof Image>
-            : T extends React.ElementType
-            ? React.ComponentPropsWithoutRef<T>
-            : Record<string, never>
-      ),
-      "direction" | "variants"
-   > & {
-      as?: T;
-      variant?: Variants;
-      delay?: number;
-      offset?: number;
-      direction?: "up" | "down" | "left" | "right";
-      inView?: boolean;
-      inViewMargin?: MarginType;
-      atOnce?: boolean | undefined;
-   };
+type RevealProps<
+   T extends React.ElementType | keyof typeof NEXT_COMPONENTS = "div",
+> = Omit<
+   MotionProps &
+      (T extends "next/link"
+         ? React.ComponentPropsWithoutRef<typeof Link>
+         : T extends "next/image"
+           ? React.ComponentPropsWithoutRef<typeof Image>
+           : T extends React.ElementType
+             ? React.ComponentPropsWithoutRef<T>
+             : Record<string, never>),
+   "direction" | "variants"
+> & {
+   as?: T;
+   variant?: Variants;
+   delay?: number;
+   offset?: number;
+   direction?: "up" | "down" | "left" | "right";
+   inView?: boolean;
+   inViewMargin?: MarginType;
+   atOnce?: boolean | undefined;
+};
 
 export default function Reveal<
    T extends React.ElementType | keyof typeof NEXT_COMPONENTS = "div",
@@ -83,13 +83,19 @@ export default function Reveal<
 
    const combinedVariants = variant || defaultVariants;
 
-   const MotionComponent = (
-      typeof Component === "string"
-         ? NEXT_COMPONENTS[Component as keyof typeof NEXT_COMPONENTS]
-            ? motion.create(NEXT_COMPONENTS[Component as keyof typeof NEXT_COMPONENTS] as unknown as React.ComponentType)
-            : motion[Component as keyof typeof motion] || motion.div
-         : motion.create(Component as React.ComponentType)
-   ) as React.ElementType;
+   const MotionComponent = useMemo(() => {
+      return (
+         typeof Component === "string"
+            ? NEXT_COMPONENTS[Component as keyof typeof NEXT_COMPONENTS]
+               ? motion.create(
+                    NEXT_COMPONENTS[
+                       Component as keyof typeof NEXT_COMPONENTS
+                    ] as unknown as React.ComponentType,
+                 )
+               : motion[Component as keyof typeof motion] || motion.div
+            : motion.create(Component as React.ComponentType)
+      ) as React.ElementType;
+   }, [Component]);
 
    return (
       <MotionComponent

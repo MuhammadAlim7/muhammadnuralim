@@ -21,20 +21,21 @@ export const isMobileDevice = (): boolean => {
       return false;
    }
 
-   if (
-      "userAgentData" in navigator &&
-      (navigator as any).userAgentData?.mobile
-   ) {
+   const nav = navigator as Navigator & {
+      userAgentData?: { mobile: boolean };
+   };
+
+   if (nav.userAgentData?.mobile) {
       return true;
    }
 
-   const ua = navigator.userAgent;
+   const ua = nav.userAgent;
    const isMobileUA =
       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
    if (isMobileUA) {
       return true;
    }
 
-   const isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+   const isTouch = "ontouchstart" in window || nav.maxTouchPoints > 0;
    return isTouch;
 };
